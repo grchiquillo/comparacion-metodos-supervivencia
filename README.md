@@ -76,10 +76,16 @@ numeración de las secciones del código original.
    METABRIC y el riesgo se resume en un predictor lineal que admite relaciones
    lineales o no lineales con las covariables.
 
-5. **Simulación de los tiempos de censura.** Se incorpora la censura mediante una
-   variable Bernoulli y el tiempo observado se construye como el mínimo entre el
-   tiempo al evento y el tiempo de censura. Se incluye una función que calibra la
-   escala de censura para alcanzar las proporciones objetivo.
+5. **Simulación de los tiempos de censura.** Los tiempos de censura se generaron
+de forma aleatoria mediante una distribución Weibull, de manera independiente del
+tiempo al evento. Para cada individuo se comparó el tiempo al evento simulado, el
+tiempo de censura y el tiempo administrativo de seguimiento, definido en 120 meses.
+El tiempo observado se construyó como el mínimo entre estos tres tiempos, y el
+indicador de estado se definió como evento observado cuando el tiempo al evento fue
+ menor o igual al tiempo de censura y al tiempo administrativo; en caso contrario,
+la observación se clasificó como censurada. Adicionalmente, se implementó un procedimiento
+ de calibración del parámetro de escala de la distribución de censura para aproximar
+ las proporciones objetivo definidas en los escenarios de simulación.
 
 6. **Simulación completa.** Se integran covariables, tiempo al evento y censura
    en una sola rutina y se realiza una prueba de la simulación.
