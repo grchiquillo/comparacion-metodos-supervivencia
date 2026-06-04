@@ -1,17 +1,10 @@
 # Comparación de modelos de supervivencia: CoxPH, SRF y GBS
 
-Este repositorio contiene el código del trabajo de grado dedicado a comparar el
-desempeño de tres modelos de análisis de supervivencia bajo distintos escenarios
-simulados: el modelo de riesgos proporcionales de Cox (CoxPH), los bosques
-aleatorios de supervivencia (Survival Random Forest, SRF) y el potenciado de
-gradiente para supervivencia (Gradient Boosting Survival, GBS).
+Este repositorio contiene el código en R desarrollado para el trabajo de grado de la Maestría en Bioestadística. El objetivo del estudio es comparar el desempeño predictivo de tres modelos de análisis de supervivencia bajo diferentes escenarios simulados: el modelo de riesgos proporcionales de Cox (CoxPH), los bosques aleatorios de supervivencia (Survival Random Forest, SRF) y el modelo de potenciación por gradiente para supervivencia (Gradient Boosting Survival, GBS).
 
-La estrategia consiste en calibrar una simulación a partir de datos reales y
-evaluar luego, sobre escenarios controlados, cuál de los tres modelos predice
-mejor el tiempo al evento. Los datos reales provienen de la base METABRIC y se
-utilizan únicamente para estimar la estructura estadística de las covariables y
-los parámetros de la simulación; el resto del estudio se realiza sobre bases
-simuladas.
+La estrategia metodológica consiste en generar datos simulados a partir de una estructura derivada de datos reales y evaluar el desempeño de los modelos en escenarios controlados. La comparación se realiza considerando dos dimensiones principales: la calibración, medida mediante el Integrated Brier Score (IBS), y la discriminación, evaluada a través del C-index.
+
+Los datos reales provienen de la base METABRIC y se utilizan únicamente como referencia para estimar la estructura estadística de las covariables y definir los parámetros de la simulación. A partir de esta información se generan las bases simuladas empleadas en el análisis comparativo. De esta forma, el estudio permite evaluar el comportamiento relativo de los modelos bajo condiciones previamente definidas de tamaño de muestra, porcentaje de censura y tipo de relación entre covariables y tiempo de supervivencia (lineal o no lineal).
 
 ## Datos
 
